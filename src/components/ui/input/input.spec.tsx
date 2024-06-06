@@ -10,7 +10,7 @@ describe('<Input />', () => {
   })
   it('should contain an errorMessage and border-error if errorMessage is provided', () => {
     const { getByText, queryByTestId } = render(
-      <Input label="label" errorMessage="error" />,
+      <Input label="label" error="error" />,
     )
     const label = getByText('error')
     expect(label.className).toContain('text-error')

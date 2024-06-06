@@ -12,9 +12,7 @@ export function AddToken() {
   const { register, handleSubmit, formState, control } =
     useForm<AddTokenSchema>({
       resolver: zodResolver(addTokenSchema),
-      defaultValues: {
-        balance: '',
-      },
+      defaultValues: {},
     })
 
   const { addToken, errorMessage } = useAddToken()
@@ -36,7 +34,7 @@ export function AddToken() {
           <Input
             label="Token"
             {...register('name')}
-            errorMessage={formState.errors.name?.message || errorMessage}
+            error={formState.errors.name?.message || errorMessage}
           />
           <Controller
             name="balance"
@@ -45,9 +43,8 @@ export function AddToken() {
               <InputMoney
                 value={field.value}
                 onChange={field.onChange}
-                placeholder="R$ 0,00"
                 label="Balance"
-                errorMessage={formState.errors.balance?.message}
+                error={formState.errors.balance?.message}
               />
             )}
           />

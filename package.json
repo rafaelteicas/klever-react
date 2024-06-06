@@ -22,6 +22,7 @@
     "react-dom": "19.0.0-rc-935180c7e0-20240524",
     "react-helmet-async": "2.0.5",
     "react-hook-form": "7.51.5",
+    "react-number-format": "5.4.0",
     "react-router-dom": "6.23.1",
     "tailwind-merge": "2.3.0",
     "uuid": "9.0.1",

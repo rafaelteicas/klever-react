@@ -47,7 +47,7 @@ export function EditToken() {
       <form className="flex flex-col justify-between px-16">
         <div className="flex justify-between">
           <h2>Edit Token</h2>
-          <Button preset="disabled" onClick={() => navigate('/')}>
+          <Button preset="disabled" path={'/'}>
             Back
           </Button>
         </div>
@@ -60,8 +60,7 @@ export function EditToken() {
             render={({ field }) => (
               <InputMoney
                 value={field.value}
-                onChange={field.onChange}
-                name={field.name}
+                onChange={(e) => field.onChange(e.target.value)}
                 label="Balance"
               />
             )}
@@ -75,7 +74,7 @@ export function EditToken() {
                 Remove
               </Button>
             </Modal.Trigger>
-            <Button type="submit" onSubmit={handleSubmit(handleSaveToken)}>
+            <Button type="button" onClick={handleSubmit(handleSaveToken)}>
               Save
             </Button>
           </footer>

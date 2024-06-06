@@ -1,7 +1,6 @@
 import { act, renderHook } from '@testing-library/react'
 
-import { Storage } from '../services/storage/storage-type'
-import { useLocalStorage } from './use-local-storage'
+import { Storage, useLocalStorage } from './use-local-storage'
 
 const localStorage: Storage<any> = {
   getItem: () => vi.fn(),

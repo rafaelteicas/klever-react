@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from 'test-utils'
+import { fireEvent, render } from 'test-utils'
 
 import { Modal } from './modal'
 

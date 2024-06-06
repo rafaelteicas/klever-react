@@ -1,38 +1,46 @@
 import { cn } from '@utils'
 import React from 'react'
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type ContainerProps = {
   label: string
-  errorMessage?: string | null
-  ref?: React.Ref<HTMLInputElement> | undefined
-  isDisabled?: boolean
+  error?: string | null
 }
 
-export const Input = ({
-  ref,
-  isDisabled,
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
+  ContainerProps & {
+    ref?: React.Ref<HTMLInputElement> | undefined
+    isDisabled?: boolean
+  }
+
+export const InputContainer = ({
   label,
-  errorMessage,
-  ...inputProps
-}: InputProps) => {
+  error,
+  children,
+}: ContainerProps & { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={label} className="text-sm font-bold capitalize">
         {label}
       </label>
+      {children}
+      {error && <p className="text-sm font-bold text-error">{error}</p>}
+    </div>
+  )
+}
+
+export const Input = ({ ref, isDisabled, ...inputProps }: InputProps) => {
+  return (
+    <InputContainer {...inputProps}>
       <input
-        id={label}
+        id={inputProps.label}
         data-testid="input"
         disabled={isDisabled}
         ref={ref}
         className={cn('h-input rounded p-2 font-bold uppercase text-dark', {
-          'border-error border': !!errorMessage,
+          'border-error border': !!inputProps.error,
         })}
         {...inputProps}
       />
-      {errorMessage && (
-        <p className="text-sm font-bold text-error">{errorMessage}</p>
-      )}
-    </div>
+    </InputContainer>
   )
 }
