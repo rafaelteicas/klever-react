@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background max-w-screen-sm mx-auto text-onBackground antialiased;
+  }
+
+  h1 {
+    @apply text-3xl font-bold leading-relaxed;
+  }
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+
+  h3 {
+    @apply text-lg font-bold;
+  }
+}
