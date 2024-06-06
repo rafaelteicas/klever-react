@@ -12,7 +12,6 @@ export function AddToken() {
   const { register, handleSubmit, formState, control } =
     useForm<AddTokenSchema>({
       resolver: zodResolver(addTokenSchema),
-      defaultValues: {},
     })
 
   const { addToken, errorMessage } = useAddToken()
@@ -43,6 +42,7 @@ export function AddToken() {
               <InputMoney
                 value={field.value}
                 onChange={field.onChange}
+                placeholder="R$ 0,00"
                 label="Balance"
                 error={formState.errors.balance?.message}
               />

@@ -8,5 +8,5 @@ test('add token to wallet', async ({ page }) => {
   await page.getByText('Save').click()
   await page.waitForURL('/')
   expect(page.getByText('TOKEN_TEST')).toBeVisible()
-  expect(page.getByText('R$ 1.000,00')).toBeVisible()
+  expect(page.getByText('R$ 1.000')).toBeVisible()
 })

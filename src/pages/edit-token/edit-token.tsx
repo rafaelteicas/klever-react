@@ -79,13 +79,13 @@ export function EditToken() {
             </Button>
           </footer>
           <Modal.Container>
-            <Modal.Header>Você tem certeza?</Modal.Header>
+            <Modal.Header>Are you sure?</Modal.Header>
             <Modal.Description>
-              Tem certeza que deseja remover o token?
+              Are you sure that you want to delete?
             </Modal.Description>
             <Modal.Footer>
-              <Modal.Cancel>Cancelar</Modal.Cancel>
-              <Modal.Action onClick={handleRemoveToken}>Remover</Modal.Action>
+              <Modal.Cancel>Cancel</Modal.Cancel>
+              <Modal.Action onClick={handleRemoveToken}>Remove</Modal.Action>
             </Modal.Footer>
           </Modal.Container>
         </Modal.Root>

@@ -1,6 +1,7 @@
 import { DefaultLayout } from '@components'
-import { AddToken, EditToken, Wallet } from '@features'
 import { createBrowserRouter } from 'react-router-dom'
+
+import { AddToken, EditToken, Wallet } from '../pages'
 
 export const router = createBrowserRouter([
   {

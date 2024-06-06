@@ -20,12 +20,15 @@ export const InputMoney = ({
   return (
     <InputContainer {...inputProps}>
       <NumericFormat
+        id={inputProps.label}
+        data-testid="input-money"
         thousandSeparator="."
         decimalSeparator=","
         prefix="R$ "
         decimalScale={2}
         value={value}
         onChange={onChange}
+        placeholder={inputProps.placeholder}
         className={cn('h-input rounded p-2 font-bold uppercase text-dark', {
           'border-error border': !!inputProps.error,
         })}

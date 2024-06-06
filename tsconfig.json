@@ -22,11 +22,11 @@
       "@context": ["./src/context"],
       "@assets": ["./src/assets"],
       "@utils": ["./src/utils"],
-      "@features": ["./src/features"],
+      "@pages": ["src/pages"],
       "test-utils": ["./src/utils/test-utils"]
     },
     "types": ["vitest/globals"]
   },
-  "include": ["src", "src/features/add-token.spec.ts"],
+  "include": ["src", "src/pages/add-token.spec.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

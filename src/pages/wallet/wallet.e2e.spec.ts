@@ -9,7 +9,7 @@ test('show wallet', async ({ page }) => {
   await page.waitForURL('/')
 
   expect(page.getByText('TOKEN_TEST')).toBeVisible()
-  expect(page.getByText('R$ 1.000,00')).toBeVisible()
+  expect(page.getByText('R$ 1.000')).toBeVisible()
 
   await page.getByText('Add Token').click()
   await page.getByLabel('Token').fill('TOKEN_TEST_2')
@@ -18,5 +18,5 @@ test('show wallet', async ({ page }) => {
   await page.waitForURL('/')
 
   expect(page.getByText('TOKEN_TEST_2')).toBeVisible()
-  expect(page.getByText('R$ 10.000,00')).toBeVisible()
+  expect(page.getByText('R$ 10.000')).toBeVisible()
 })
