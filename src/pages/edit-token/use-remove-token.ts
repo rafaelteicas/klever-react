@@ -1,6 +1,7 @@
 import { useWallet } from '@context'
 import { useMutation } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const useRemoveToken = () => {
   const { removeToken } = useWallet()
@@ -10,6 +11,7 @@ export const useRemoveToken = () => {
     mutationFn: (id) => removeToken(id),
     onSuccess: () => {
       navigate('/')
+      toast.success('Success!', { position: 'bottom-right' })
     },
   })
 
